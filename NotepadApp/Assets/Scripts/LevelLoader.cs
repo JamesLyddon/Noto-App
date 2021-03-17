@@ -48,7 +48,7 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator EntryWait()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3.5f);
         transitionPlay = true;
     }
 }
