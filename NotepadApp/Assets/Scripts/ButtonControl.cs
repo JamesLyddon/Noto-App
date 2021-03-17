@@ -8,6 +8,7 @@ public class ButtonControl : MonoBehaviour
     public GameObject theText;
     public AudioSource clearSound;
     public GameObject thePanel;
+    public LevelLoader lLoaderScript;
 
     public void ClearText()
     {
@@ -27,6 +28,13 @@ public class ButtonControl : MonoBehaviour
 
     public void QuitButton()
     {
+        StartCoroutine(leaveApp());
+    }
+
+    IEnumerator leaveApp()
+    {
+        lLoaderScript.transitionPlay = true;
+        yield return new WaitForSeconds(1);
         Application.Quit();
         Debug.Log("Quit");
     }

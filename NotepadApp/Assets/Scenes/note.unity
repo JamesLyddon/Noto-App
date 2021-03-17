@@ -1574,6 +1574,7 @@ MonoBehaviour:
   theText: {fileID: 2057389522}
   clearSound: {fileID: 98727089}
   thePanel: {fileID: 976822453}
+  lLoaderScript: {fileID: 1573666233}
 --- !u!4 &916676495
 Transform:
   m_ObjectHideFlags: 0
@@ -2430,6 +2431,7 @@ GameObject:
   - component: {fileID: 1483724951}
   - component: {fileID: 1483724953}
   - component: {fileID: 1483724952}
+  - component: {fileID: 1483724954}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -2498,6 +2500,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483724950}
   m_CullTransparentMesh: 1
+--- !u!95 &1483724954
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483724950}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 946ee8a3705058442aa8a5d76dda7d7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1573666232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2508,6 +2529,10 @@ PrefabInstance:
     - target: {fileID: 1476063526043344190, guid: 661dcf04c04b3a34a85773c915a2376e, type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476063526043344190, guid: 661dcf04c04b3a34a85773c915a2376e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1476063526043344191, guid: 661dcf04c04b3a34a85773c915a2376e, type: 3}
       propertyPath: m_RootOrder
@@ -2555,6 +2580,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661dcf04c04b3a34a85773c915a2376e, type: 3}
+--- !u!114 &1573666233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 322364564626506600, guid: 661dcf04c04b3a34a85773c915a2376e, type: 3}
+  m_PrefabInstance: {fileID: 1573666232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ec0607cace7544e8fb15830532ee8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1651820811
 GameObject:
   m_ObjectHideFlags: 0
