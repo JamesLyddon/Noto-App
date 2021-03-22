@@ -7,12 +7,16 @@ public class DonutSpawner : MonoBehaviour
     public GameObject[] donuts;
     public AudioSource blip;
     public GameObject explosionEffect;
-    
+    public Vector3 spawnPoint;
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0)) {
 
+            //spawnPoint = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            spawnPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var donutInstance = donuts[Random.Range(0, 4)];
+            donutInstance.transform.position = spawnPoint;
             StartCoroutine(SpawnDonut(donutInstance));
             blip.pitch = Random.Range(0.5f, 1.5f);
         }
@@ -20,7 +24,9 @@ public class DonutSpawner : MonoBehaviour
 
     IEnumerator SpawnDonut(GameObject donut)
     {
-        var tempDonut = Instantiate(donut, new Vector3((Random.Range(-0.5f, 0.5f)), Random.Range(1.0f, 2.5f), Random.Range(-0.15f, 0.15f)), Quaternion.identity);
+        
+        var tempDonut = Instantiate(donut, donut.transform.position, Quaternion.identity);
+        Debug.Log(spawnPoint);
         yield return new WaitForSeconds(3);
         var tempExplosion = Instantiate(explosionEffect, tempDonut.transform.position, tempDonut.transform.rotation);
         tempExplosion.GetComponent<AudioSource>().pitch = Random.Range(0.5f, 5f);
@@ -40,4 +46,8 @@ public class DonutSpawner : MonoBehaviour
         yield return new WaitForSeconds(1);
         Destroy(tempExplosion);
     }
+
+
+    //(Random.Range(-0.5f, 0.5f)), Random.Range(1.0f, 2.5f), Random.Range(-0.15f, 0.15f)
+
 }
