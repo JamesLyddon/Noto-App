@@ -22,7 +22,7 @@ public class DonutSpawner : MonoBehaviour
     {
         var tempDonut = Instantiate(donut, new Vector3((Random.Range(-0.5f, 0.5f)), Random.Range(1.0f, 2.5f), Random.Range(-0.15f, 0.15f)), Quaternion.identity);
         yield return new WaitForSeconds(3);
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        Instantiate(explosionEffect, tempDonut.transform.position, tempDonut.transform.rotation);
         Destroy(tempDonut);
     }
 }
