@@ -1,8 +1,0 @@
-- make glass wall solid
-- make the donuts bounce
-- destroy donuts after x seconds
-- add particles
-- add some kind of objective or score
-- add entry menu and a way to exit
-- add more sound effects
-- make the walls change colours?
